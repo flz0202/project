@@ -1,0 +1,96 @@
+class Node:
+    def __init__(self,key=None,net=None):
+        self.key = key
+        self.next = next
+
+class tree(object):
+    def __init__(self,root):
+        root = tree_Node(root)
+        self.root = root
+    
+    def put_tree2right(self , tree_temp): 
+        if isinstance(tree_temp , tree):
+            self.root.right = tree_temp.root
+        else:
+            print("error.")
+    
+    def put_tree2left(self , tree_temp):
+        if isinstance(tree_temp , tree): 
+            self.root.left = tree_temp.root
+        else:
+            print("error.")
+    
+    def insert_left(self,data): 
+        newNode = tree_Node(data)
+        temp = self.root
+        while temp.left is not None:
+            temp = temp.left
+        temp.left = newNode
+    
+    def insert_right(self,data): 
+        newNode = tree_Node(data)
+        temp = self.root
+        while temp.right is not None:
+            temp = temp.right
+        temp.right = newNode
+        
+    def pre(self,root_temp):
+        if root_temp is None:
+            return
+        print(root_temp.elem)
+        self.pre(root_temp.left)
+        self.pre(root_temp.right)
+    
+    def back(self , root_temp):
+        if root_temp is None:
+            return
+        self.back(root_temp.left)
+        self.back(root_temp.right)
+        print(root_temp.elem)
+    
+
+
+
+
+def insert(self):
+        self.heapList.append(k)
+        self.currentsize+=1
+        self.percUp(self.currentsize)
+ 
+def percUp(self,i):
+        while i//2>0:
+            if self.heapList[i]<self.heapList[i//2]:
+                temp=self.heapList[i//2]
+                self.heapList[i//2]=self.heapList[i]
+                self.heapList[i]=temp
+            i=i//2
+            
+            
+            
+            
+            
+def delMin(self):
+        re=self.heapList[1]
+        self.heapList[1]=self.heapList[self.currentsize]
+        self.currentsize-=1
+        self.heapList.pop()
+        self.percDown(1)
+        return re
+ 
+def percDown(self,i):
+    while i*2<=self.currentsize
+        m=minChild(i)
+        if self.heapList[m]<self.heapList[i]:
+            temp=self.heapList[m]
+            self.heapList[m]=self.heapList[i]
+            self.heapList[i]=temp
+        i=m
+ 
+def minChild(self,i):
+    if 2*i+1>self.currentsize
+        return 2*i
+    else:
+        if self.heapList[2*i]<self.heapList[2*i+1]:
+            return 2*i
+        else:
+            return 2*i+1
